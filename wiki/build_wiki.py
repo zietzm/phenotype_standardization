@@ -58,5 +58,5 @@ formatted_wiki = wiki_template.format(
     measurements=measurement_definitions,
 )
 
-with open('wiki/outputs/covid-19-clinical-definitions.md', 'w') as f:
+with open('wiki/outputs/COVID-19-clinical-definitions.md', 'w') as f:
     f.write(formatted_wiki)
