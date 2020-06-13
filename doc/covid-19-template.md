@@ -18,7 +18,13 @@ this into the complete wiki, curly braces must be doubled.
 
 ## Usage
 
-Queries contain a user-defined SQL variable for date, `@date`. I use the following function to make queries (eg. in R):
+Queries contain a user-defined SQL variable for date, `@date`, which must be set for the COVID tables.
+
+```SQL
+SET @date = CAST("2020-06-02" AS DATE)
+```
+
+In R, for example,
 
 ```R
 date = '2020-06-02'
@@ -26,12 +32,15 @@ date = '2020-06-02'
 DBI::dbSendQuery(con, stringr::str_glue('SET @date = CAST("{{date}}" AS DATE)'))
 ```
 
+Once the variable has been set, it should work for the current connection.
+I make queries with, for example, the following:
+
 ```R
 sql_to_tibble <- function(sql_code, .con = con) {{
     sql_code %>%
-        sql %>%
-        tbl(src = .con) %>%
-        as_tibble
+        dbplyr::sql %>%
+        dbplyr::tbl(src = .con) %>%
+        tibble::as_tibble
 }}
 ```
 
@@ -45,8 +54,6 @@ obese_by_bmi <- '
     ' %>%
     sql_to_tibble
 ```
-
-While this makes things easier in general, just remember that when you want to use the `{{` or `}}` characters (which are common in descriptions in the Epic tables), just double the character (eg. `{{NYP}}`).
 
 ---
 
