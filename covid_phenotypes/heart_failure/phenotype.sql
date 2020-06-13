@@ -1,21 +1,21 @@
 SELECT DISTINCT pat_mrn_id
 FROM (
-    -- From COVID table (descendants of OMOP 317576 mapped to ICD-10 CM)
+    -- From COVID table (descendants of OMOP 316139 mapped to ICD-10 CM)
     SELECT DISTINCT pat_mrn_id
     FROM concept_ancestor
     INNER JOIN concept_relationship ON descendant_concept_id = concept_id_1
     INNER JOIN concept ON concept_id_2 = concept_id
     INNER JOIN 1_covid_patients_noname ON concept_code = REPLACE(icd10_code, ",", "")
-    WHERE ancestor_concept_id = 317576 AND
+    WHERE ancestor_concept_id = 316139 AND
         relationship_id IN ("Included in map from", "Mapped from") AND
         vocabulary_id = "ICD10CM" AND date_retrieved = @date
 
     UNION ALL
 
-    -- From OMOP table (descendants of OMOP 317576)
+    -- From OMOP table (descendants of OMOP 316139)
     SELECT DISTINCT pat_mrn_id
     FROM concept_ancestor
     INNER JOIN condition_occurrence ON descendant_concept_id = condition_concept_id
     INNER JOIN 1_covid_patient2person using (person_id)
-    WHERE ancestor_concept_id = 317576
-) AS coronary_artery_disease_patients
+    WHERE ancestor_concept_id = 316139
+) AS heart_failure_patients
