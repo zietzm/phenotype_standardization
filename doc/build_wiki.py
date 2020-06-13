@@ -19,8 +19,8 @@ def format_entry(phenotype_path):
 
     # Format table of contents
     phenotype_name = re.search('(?<=## ).+(?=\s)', readme).group()
-    phenotype_link = re.sub('\s', '-', phenotype_name.lower())
-    table_of_contents_entry = f'[{phenotype_name}](#{phenotype_link}-)<br/>\n'
+    phenotype_link = re.sub('\s', '-', phenotype_name.lower().strip())
+    table_of_contents_entry = f'[{phenotype_name}](#{phenotype_link})<br/>\n'
     return table_of_contents_entry, readme
 
 

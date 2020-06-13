@@ -5,16 +5,16 @@ this into the complete wiki, curly braces must be doubled.
 
 ### Table of Contents
 
-[Usage](#usage-)<br/>
+[Usage](#usage)<br/>
 
-[SARS-CoV-2 infection test result](#sars-cov-2-infection-test-result-)<br/>
-[COVID-19 diagnosis](#covid-19-diagnosis-)<br/>
+[SARS-CoV-2 infection test result](#sars-cov-2-infection-test-result)<br/>
+[COVID-19 diagnosis](#covid-19-diagnosis)<br/>
 
 {risk_factor_contents}
 
 {measurement_contents}
 
-[Drug exposures](#drug-exposures-)<br/>
+[Drug exposures](#drug-exposures)<br/>
 
 ## Usage
 

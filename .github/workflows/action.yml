@@ -1,0 +1,29 @@
+name: Update and publish wiki
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository itself
+        uses: actions/checkout@v2
+      - name: Checkout repository wiki
+        uses: actions/checkout@v2
+        with:
+          repository: zietzm/phenotype_standardization.wiki
+          path: phenotype_standardization.wiki
+      - name: Build wiki page
+        run: |
+          python3 doc/build_wiki.py
+      - name: Push updated wiki
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        run: |
+          mv doc/completed_wiki.md phenotype_standardization.wiki/COVID-19-clinical-definitions.md
+          cd phenotype_standardization.wiki/
+          WIKI_REPO_URL="https://${GH_PERSONAL_ACCESS_TOKEN}@github.com/zietzm/phenotype_standardization.wiki.git"
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add .
+          git commit -m "Automatically publish wiki"
+          git push --set-upstream "$WIKI_REPO_URL" master
+        env:
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
