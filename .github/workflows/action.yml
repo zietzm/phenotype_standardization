@@ -13,11 +13,12 @@ jobs:
           path: phenotype_standardization.wiki
       - name: Build wiki page
         run: |
-          python3 doc/build_wiki.py
+          mkdir wiki/outputs/
+          python3 wiki/build_wiki.py
       - name: Push updated wiki
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         run: |
-          mv doc/completed_wiki.md phenotype_standardization.wiki/COVID-19-clinical-definitions.md
+          mv wiki/outputs/*.md phenotype_standardization.wiki/
           cd phenotype_standardization.wiki/
           WIKI_REPO_URL="https://${GH_PERSONAL_ACCESS_TOKEN}@github.com/zietzm/phenotype_standardization.wiki.git"
           git config user.name "$GITHUB_ACTOR"

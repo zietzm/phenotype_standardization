@@ -47,7 +47,7 @@ for phenotype_path in measurement_paths:
     measurement_definitions += definition
 
 
-with open('doc/covid-19-template.md', 'r') as f:
+with open('wiki/template-covid-19.md', 'r') as f:
     wiki_template = f.read()
 
 formatted_wiki = wiki_template.format(
@@ -58,5 +58,5 @@ formatted_wiki = wiki_template.format(
     measurements=measurement_definitions,
 )
 
-with open('doc/completed_wiki.md', 'w') as f:
+with open('wiki/outputs/covid-19-clinical-definitions.md', 'w') as f:
     f.write(formatted_wiki)
