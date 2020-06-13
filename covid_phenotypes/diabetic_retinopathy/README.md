@@ -4,6 +4,8 @@ Using a single diagnosis of any descendant of [SNOMED CT 4855003 (Retinopathy du
 
 Note: there are a lot of ICD-10 CM codes describing diabetic retinopathy (93 used in the COVID table alone as of June 10), so I chose not to list them explicitly.
 
+<!---
 ```SQL
 {}
 ```
+-->

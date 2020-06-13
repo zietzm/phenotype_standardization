@@ -4,6 +4,8 @@ Descendants of [SNOMED 709044004 (Chronic kidney disease)](https://athena.ohdsi.
 
 Source http://doi.org/10.1001/jama.2019.14745
 
+<!---
 ```SQL
 {}
 ```
+-->

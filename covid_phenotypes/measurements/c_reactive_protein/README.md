@@ -7,6 +7,8 @@ This finds each person's first C-reactive protein measurement since March 01, 20
 
 Since the measurements use both mg/dL and mg/L, this returns all values converted to **mg/L**.
 
+<!---
 ```SQL
 {}
 ```
+-->

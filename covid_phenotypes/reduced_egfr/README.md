@@ -8,6 +8,8 @@ One abnormally high estimate of one of the following:
 
 All GFR estimates used below have >= 60 as the reference range.
 
+<!---
 ```SQL
 {}
 ```
+-->

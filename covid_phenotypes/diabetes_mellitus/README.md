@@ -7,7 +7,9 @@ HbA1c measured using any of the following:
 2. [LOINC 17856-6 (Hemoglobin A1c/Hemoglobin.total in Blood by HPLC)](https://athena.ohdsi.org/search-terms/terms/3005673) 
 3. [LOINC 55454-3 (Deprecated Hemoglobin A1c in Blood)](https://athena.ohdsi.org/search-terms/terms/40758583) 
 
+<!---
 ```SQL
 {}
 ```
+-->
 In the future, we could consider adding [(fasting) glucose measurements also](https://my.clevelandclinic.org/health/diseases/7104-diabetes-mellitus-an-overview/diagnosis-and-tests).

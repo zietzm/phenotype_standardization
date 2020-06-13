@@ -10,6 +10,8 @@ Alternatively, diagnosis of descendants of [SNOMED CT 127013003 (Disorder of kid
 4. [ICD-10 CM E11.21 (Type 2 diabetes mellitus with diabetic nephropathy)](https://athena.ohdsi.org/search-terms/terms/45591027)
 5. [ICD-10 CM E13.21 (Other specified diabetes mellitus with diabetic nephropathy)](https://athena.ohdsi.org/search-terms/terms/45542741)
 
+<!---
 ```SQL
 {}
 ```
+-->

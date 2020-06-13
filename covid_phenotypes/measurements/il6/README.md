@@ -4,6 +4,8 @@ This finds each person's first IL-6 measurement since March 01, 2020 using [LOIN
 
 There are a couple different tests in our data that use this code. The overwhelming majority are two tests with the same reference values (<=5), so I restrict to these.
 
+<!---
 ```SQL
 {}
 ```
+-->

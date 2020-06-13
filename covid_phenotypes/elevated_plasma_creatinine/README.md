@@ -8,6 +8,8 @@ Abnormal for males >= 1.3 mg/dL, females >= 1.2 mg/dL (conservatively since refe
 
 Source for reference ranges https://labtestsonline.org/tests/creatinine
 
+<!---
 ```SQL
 {}
 ```
+-->

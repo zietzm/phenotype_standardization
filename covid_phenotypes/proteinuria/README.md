@@ -11,6 +11,8 @@ Note: the `component_id` is not a one-to-one map with `component_loinc_code`, so
 |        28886|URINE PROTEIN RANDOM {NYP}  |
 |        28894|URINE PROTEIN 24 HOUR {NYP} |
 
+<!---
 ```SQL
 {}
 ```
+-->

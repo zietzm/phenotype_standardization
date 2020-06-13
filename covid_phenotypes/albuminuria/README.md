@@ -8,6 +8,8 @@
 
 Reference ranges provided in the table.
 
+<!---
 ```SQL
 {}
 ```
+-->
