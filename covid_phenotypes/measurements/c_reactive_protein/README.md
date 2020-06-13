@@ -1,4 +1,4 @@
-## C-reactive protein 
+## C-reactive protein
 
 This finds each person's first C-reactive protein measurement since March 01, 2020 using either of the following measurements:
 
