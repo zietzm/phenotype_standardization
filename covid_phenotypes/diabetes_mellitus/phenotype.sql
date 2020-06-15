@@ -24,8 +24,8 @@ FROM (
     FROM measurement
     INNER JOIN 1_covid_patient2person USING (person_id)
     WHERE measurement_concept_id IN (3004410, 3005673, 40758583) AND
-        CAST(REPLACE(REPLACE(REPLACE(value_source_value, "<", ""), ">", ""), "%", "")
-             AS DECIMAL(4, 3)) >= 6.5
+        value_source_value REGEXP "^[<>%0-9\\.]+$" AND
+        CAST(REPLACE(REPLACE(REPLACE(value_source_value, "<", ""), ">", ""), "%", "") AS DECIMAL(10, 5)) >= 6.5
 
     UNION ALL
 
@@ -33,6 +33,6 @@ FROM (
     SELECT DISTINCT pat_mrn_id
     FROM 1_covid_measurements_noname
     WHERE date_retrieved = @date AND component_loinc_code IN (4548, 17856) AND
-        CAST(REPLACE(REPLACE(REPLACE(ord_value, "<", ""), ">", ""), "%", "")
-             AS DECIMAL(4, 3)) >= 6.5
+        ord_value REGEXP "^[<>%0-9\\.]+$" AND
+        CAST(REPLACE(REPLACE(REPLACE(ord_value, "<", ""), ">", ""), "%", "") AS DECIMAL(10, 5)) >= 6.5
 ) AS dm_patients
