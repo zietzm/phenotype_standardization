@@ -3,10 +3,8 @@ FROM (
     -- From measurement table (BMI > 30 or BMI percentile > 95%)
     SELECT DISTINCT person_id
     FROM measurement
-    WHERE measurement_date >= "2019-01-01" AND (
-        (measurement_concept_id = 3038553 AND value_as_number >= 30) OR  
-        (measurement_concept_id = 40762636 AND value_as_number >= 95)
-    ) 
+    WHERE (measurement_concept_id = 3038553 AND value_as_number >= 30) OR
+          (measurement_concept_id = 40762636 AND value_as_number >= 95)
 
     UNION ALL
 
