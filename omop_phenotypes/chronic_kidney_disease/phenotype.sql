@@ -18,7 +18,7 @@ FROM (
         (unit_concept_id = 8859 AND value_as_number > 300)
     )
     GROUP BY person_id
-    HAVING COUNT(DISTINCT measurement_date) >= 2;
+    HAVING COUNT(DISTINCT measurement_date) >= 2
 
     UNION ALL
 
