@@ -1,6 +1,6 @@
 SELECT DISTINCT person_id
 FROM (
-    -- From OMOP table (descendants of OMOP 46271022)
+    -- From condition table (descendants of OMOP 46271022)
     SELECT DISTINCT person_id
     FROM concept_ancestor
     INNER JOIN condition_occurrence ON descendant_concept_id = condition_concept_id

@@ -1,6 +1,6 @@
 ## Diabetes mellitus 
 
-Defined using descendants of [SNOMED 73211009 (Diabetes mellitus)](https://athena.ohdsi.org/search-terms/terms/201820), [ICD 10 CM E08-E13](https://www.icd10data.com/ICD10CM/Codes/E00-E89/E08-E13), or [HbA1c >= 6.5%](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799221/).
+Defined using descendants of [SNOMED 73211009 (Diabetes mellitus)](https://athena.ohdsi.org/search-terms/terms/201820) or [HbA1c >= 6.5%](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3799221/).
 
 HbA1c measured using any of the following:
 1. [LOINC 4548-4 (Hemoglobin A1c/Hemoglobin.total in Blood)](https://athena.ohdsi.org/search-terms/terms/3004410) 
