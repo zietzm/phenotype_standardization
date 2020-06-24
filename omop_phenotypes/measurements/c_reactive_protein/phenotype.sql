@@ -1,7 +1,7 @@
 SELECT measurement.person_id,
     CASE
-        WHEN unit_concept_id = 8751 THEN CAST(REPLACE(REPLACE(value_source_value, ">", ""), "<", "") AS DECIMAL(10, 5))
-        WHEN unit_concept_id = 8840 THEN 10 * CAST(REPLACE(REPLACE(value_source_value, ">", ""), "<", "") AS DECIMAL(10, 5))
+        WHEN unit_concept_id = 8751 THEN CAST(REPLACE(REPLACE(value_source_value, ">", ""), "<", "") AS DECIMAL(20, 10))
+        WHEN unit_concept_id = 8840 THEN 10 * CAST(REPLACE(REPLACE(value_source_value, ">", ""), "<", "") AS DECIMAL(20, 10))
     END AS measurement_value
 FROM measurement
 INNER JOIN (

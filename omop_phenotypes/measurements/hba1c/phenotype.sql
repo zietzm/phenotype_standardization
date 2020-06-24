@@ -1,5 +1,5 @@
 SELECT measurement.person_id,
-       CAST(REPLACE(REPLACE(REPLACE(value_source_value, "<", ""), ">", ""), "%", "") AS DECIMAL(10, 5)) AS measurement_value
+       CAST(REPLACE(REPLACE(REPLACE(value_source_value, "<", ""), ">", ""), "%", "") AS DECIMAL(20, 10)) AS measurement_value
 FROM measurement
 INNER JOIN (
     -- Only one measurement from the earliest time for that person

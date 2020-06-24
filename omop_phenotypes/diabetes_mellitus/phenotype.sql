@@ -13,5 +13,5 @@ FROM (
     FROM measurement
     WHERE measurement_concept_id IN (3004410, 3005673, 40758583) AND
           value_source_value REGEXP "^[<>%0-9\\.]+$" AND value_source_value REGEXP "[0-9]" AND
-          CAST(REPLACE(REPLACE(REPLACE(value_source_value, "<", ""), ">", ""), "%", "") AS DECIMAL(10, 5)) >= 6.5
+          CAST(REPLACE(REPLACE(REPLACE(value_source_value, "<", ""), ">", ""), "%", "") AS DECIMAL(20, 10)) >= 6.5
 ) AS dm_patients
