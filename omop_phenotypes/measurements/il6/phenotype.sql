@@ -9,12 +9,13 @@ INNER JOIN (
         SELECT person_id, MIN(measurement_date) AS measurement_date
         FROM measurement
         WHERE measurement_concept_id = 3023091 AND value_source_value REGEXP "^[<>0-9\\.]+$" AND
-              measurement_date >= "2020-03-01"
+              value_source_value REGEXP "[0-9]" AND measurement_date >= "2020-03-01"
         GROUP BY person_id
     ) AS first_measurements
     ON first_measurements.person_id = measurement.person_id AND
        first_measurements.measurement_date = measurement.measurement_date
-    WHERE measurement_concept_id = 3023091 AND value_source_value REGEXP "^[<>0-9\\.]+$"
+    WHERE measurement_concept_id = 3023091 AND value_source_value REGEXP "^[<>0-9\\.]+$" AND
+          value_source_value REGEXP "[0-9]"
     GROUP BY measurement.person_id
 ) AS distinct_first_time_measurements
 ON distinct_first_time_measurements.person_id = measurement.person_id AND

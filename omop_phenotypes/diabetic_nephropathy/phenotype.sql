@@ -1,7 +1,7 @@
 SELECT DISTINCT person_id
 FROM (
     -- Albuminuria
-    SELECT DISTINCT person_id
+    SELECT DISTINCT albuminuria_patients.person_id
     FROM (
         SELECT DISTINCT person_id
         FROM measurement
@@ -20,7 +20,7 @@ FROM (
         FROM measurement
         INNER JOIN person ON measurement.person_id = person.person_id
         WHERE measurement_concept_id = 3016723 AND unit_source_value = "mg/dl" AND
-            value_source_value REGEXP "^[0-9\\.<]+$" AND (
+            value_source_value REGEXP "^[0-9\\.<]+$" AND value_source_value REGEXP "[0-9]" AND (
                 -- Female
                 (gender_concept_id = 8532 AND CAST(REPLACE(value_source_value, '<', '') AS DECIMAL(10, 5)) > 1.2) OR
                 -- Male
@@ -36,7 +36,7 @@ FROM (
         FROM measurement
         WHERE measurement_concept_id IN (3029829, 3029859, 3030104, 3030354, 3049187, 3053283, 36303797,
                                          36306178, 40764999, 40771922, 42869913, 46235172, 46236952) AND
-            value_source_value REGEXP "^[0-9\\.<>=]+$" AND value_source_value != '.' AND
+            value_source_value REGEXP "^[0-9\\.<>=]+$" AND value_source_value REGEXP "[0-9]" AND
             CAST(REPLACE(REPLACE(REPLACE(value_source_value, '<', ''), '>', ''), '=', '') AS DECIMAL(10, 5)) > 0 AND
             CAST(REPLACE(REPLACE(REPLACE(value_source_value, '<', ''), '>', ''), '=', '') AS DECIMAL(10, 5)) < 60
     ) AS plasma_creatinine_egfr_patients ON albuminuria_patients.person_id = plasma_creatinine_egfr_patients.person_id
