@@ -1,6 +1,6 @@
 # Standardized phenotypes library
 
-![Latest wiki](https://github.com/zietzm/phenotype_standardization/workflows/Update%20and%20publish%20wiki/badge.svg?branch=master)
+[![GitHub Actions Wiki CI](https://img.shields.io/github/workflow/status/zietzm/phenotype_standardization/Update%20and%20publish%20wiki?label=Build%20Wiki&logo=github&style=for-the-badge)](https://github.com/zietzm/phenotype_standardization/actions)
 
 See https://github.com/zietzm/phenotype_standardization/wiki for formatted phenotypes with explanations.
 
