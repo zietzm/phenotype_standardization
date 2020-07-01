@@ -1,4 +1,6 @@
-SELECT pat_mrn_id, CAST(REPLACE(REPLACE(REPLACE(ord_value, "<", ""), ">", ""), "%", "") AS DECIMAL(10, 5)) AS ord_value
+SELECT
+    pat_mrn_id,
+    CAST(REPLACE(REPLACE(REPLACE(ord_value, "<", ""), ">", ""), "%", "") AS DECIMAL(10, 5)) AS measurement_value
 FROM 1_covid_measurements_noname
 INNER JOIN (
     -- Only one measurement from the earliest time for that person (ensuring correct component again,

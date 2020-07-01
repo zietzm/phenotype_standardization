@@ -1,8 +1,9 @@
-SELECT pat_mrn_id,
+SELECT
+    pat_mrn_id,
     CASE
         WHEN reference_unit = "mg/L" THEN CAST(REPLACE(REPLACE(ord_value, ">", ""), "<", "") AS DECIMAL(10, 5))
         WHEN reference_unit = "mg/dL" THEN 10 * CAST(REPLACE(REPLACE(ord_value, ">", ""), "<", "") AS DECIMAL(10, 5))
-    END AS ord_value
+    END AS measurement_value
 FROM 1_covid_measurements_noname
 INNER JOIN (
     -- Only one measurement from the earliest time for that person (ensuring correct component again,
